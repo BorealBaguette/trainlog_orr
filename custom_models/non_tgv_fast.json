@@ -1,0 +1,26 @@
+{
+  "distance_influence": 0,
+
+  "priority": [
+    {
+      "if": "!rail_access",
+      "multiply_by": "0"
+    },
+    {
+      "if": "rail_average_speed >= 300",
+      "multiply_by": "0"
+    }
+  ],
+
+  "speed": [
+    {
+      "if": "rail_average_speed >= 300",
+      "limit_to": "0"
+    },
+    {
+      "if": "true",
+      "limit_to": "120"
+    }
+  ]
+}
+

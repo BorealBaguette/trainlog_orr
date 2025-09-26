@@ -1,0 +1,10 @@
+{
+  "distance_influence": 0,
+  "priority": [
+    { "if": "rail_access", "multiply_by": "1.0" },
+    { "else": "", "multiply_by": "0.5" }
+  ],
+  "speed": [
+    { "if": "true", "limit_to": "rail_average_speed" }
+  ]
+}

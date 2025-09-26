@@ -29,42 +29,48 @@ graphhopper:
   # profiles (see below). Or at least limit the number of `routing.max_visited_nodes`.
 
   profiles:
-    - name: tgv_all
-      turn_costs:
-        vehicle_types: [train]
-        # Reversing costs 5 minutes.
-        u_turn_costs: 300
-      custom_model_files: [rail.json, tgv_all.json, preferred_direction.json]
-    - name: non_tgv
-      turn_costs:
-        vehicle_types: [train]
-        # Reversing costs 15 minutes.
-        u_turn_costs: 900
-      custom_model_files: [rail.json, non_tgv.json, preferred_direction.json]
-    - name: non_tgv_fast
-      turn_costs:
-        vehicle_types: [train]
-        # Reversing costs 15 minutes.
-        u_turn_costs: 900
-      custom_model_files: [rail.json, non_tgv_fast.json, preferred_direction.json]
-    - name: tramtrain
-      turn_costs:
-        vehicle_types: [train, tram, light_rail]
-        # Reversing costs 3 minutes.
-        u_turn_costs: 180
-      custom_model_files: [tramtrain.json, 15kv-ac_750v-dc.json, gauge_1435.json, preferred_direction.json]
-    - name: all_tracks
+    # - name: tgv_all
+    #   turn_costs:
+    #     vehicle_types: [train]
+    #     # Reversing costs 5 minutes.
+    #     u_turn_costs: 300
+    #   custom_model_files: [rail.json, tgv_all.json, preferred_direction.json]
+    # - name: non_tgv
+    #   turn_costs:
+    #     vehicle_types: [train]
+    #     # Reversing costs 15 minutes.
+    #     u_turn_costs: 900
+    #   custom_model_files: [rail.json, non_tgv.json, preferred_direction.json]
+    # - name: non_tgv_fast
+    #   turn_costs:
+    #     vehicle_types: [train]
+    #     # Reversing costs 15 minutes.
+    #     u_turn_costs: 900
+    #   custom_model_files: [rail.json, non_tgv_fast.json, preferred_direction.json]
+    # - name: tramtrain
+    #   turn_costs:
+    #     vehicle_types: [train, tram, light_rail]
+    #     # Reversing costs 3 minutes.
+    #     u_turn_costs: 180
+    #   custom_model_files: [tramtrain.json, 15kv-ac_750v-dc.json, gauge_1435.json, preferred_direction.json]
+    # - name: all_tracks
+    #   turn_costs:
+    #     vehicle_types: [train, tram, light_rail, subway]
+    #     # Reversing costs 3 minutes.
+    #     u_turn_costs: 180
+    #   custom_model_files: [all_tracks.json]
+    # - name: all_tracks_1435
+    #   turn_costs:
+    #     vehicle_types: [train, tram, light_rail, subway]
+    #     # Reversing costs 3 minutes.
+    #     u_turn_costs: 180
+    #   custom_model_files: [all_tracks.json, gauge_1435.json]
+    - name: all
       turn_costs:
         vehicle_types: [train, tram, light_rail, subway]
         # Reversing costs 3 minutes.
         u_turn_costs: 180
-      custom_model_files: [all_tracks.json]
-    - name: all_tracks_1435
-      turn_costs:
-        vehicle_types: [train, tram, light_rail, subway]
-        # Reversing costs 3 minutes.
-        u_turn_costs: 180
-      custom_model_files: [all_tracks.json, gauge_1435.json]
+      custom_model_files: [all.json, preferred_direction.json]
 
   # instead of the inbuilt custom models (see ./src/main/resources/com/graphhopper/custom_models)
   # you can specify a folder where to find your own custom model files
@@ -77,11 +83,7 @@ graphhopper:
   # profiles with `turn_costs: true` a more elaborate preparation is required (longer preparation time and more memory
   # usage) and the routing will also be slower than with `turn_costs: false`.
   profiles_ch:
-    - profile: tgv_all
-    - profile: non_tgv
-    - profile: tramtrain
-    - profile: all_tracks
-    - profile: all_tracks_1435
+    - profile: all
 
   # Hybrid mode:
   # Similar to speed mode, the hybrid mode (Landmarks, LM) also speeds up routing by doing calculating auxiliary data

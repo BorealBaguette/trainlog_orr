@@ -2,6 +2,7 @@ graphhopper:
   import.osm.ignored_highways: ''
   # OpenStreetMap input file
   datareader.file: /app/data/filtered_train.osm.pbf 
+  index.max_region_search: 500
 
   ##### Vehicles #####
 

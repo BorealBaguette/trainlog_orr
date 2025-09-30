@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 # Clone and build the OpenRailRouting app
 WORKDIR /app
-RUN git clone https://github.com/BorealBaguette/OpenRailRouting.git . && \
+RUN git clone https://github.com/geofabrik/OpenRailRouting.git . && \
     git submodule init && \
     git submodule update && \
     mvn clean package -DskipTests && \
